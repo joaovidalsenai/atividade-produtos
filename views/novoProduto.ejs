@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+
+<h2 class="h4 mb-3">Cadastrar Novo Produto</h2>
+
+<div class="card">
+    <div class="card-body">
+        
+        <form action="/produtos/salvar" method="POST">
+            
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição:</label>
+                <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="quantidade" class="form-label">Quantidade:</label>
+                    <input type="number" class="form-control" id="quantidade" name="quantidade" min="0" step="1">
+                </div>
+                
+                <div class="col-md-4 mb-3">
+                    <label for="valor" class="form-label">Valor (R$):</label>
+                    <input type="number" class="form-control" id="valor" name="valor" min="0.00" step="0.01">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="data" class="form-label">Data:</label>
+                    <input type="date" class="form-control" id="data" name="data">
+                </div>
+            </div>
+            
+            <hr>
+
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="/produtos" class="btn btn-secondary">Cancelar</a>
+            
+        </form>
+
+    </div>
+</div>
+
+<%- include('partials/footer') %>
